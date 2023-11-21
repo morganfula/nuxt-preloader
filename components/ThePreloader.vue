@@ -7,6 +7,7 @@ import type { set } from 'nuxt/dist/app/compat/capi';
 
 <script setup>
 	import gsap from 'gsap';
+	import { general } from '@/store/index.js';
 
 	const DELAY_BETWEEN_PHOTO_LOADED = 15;
 	const number_of_images_loaded = ref(0);
@@ -50,6 +51,7 @@ import type { set } from 'nuxt/dist/app/compat/capi';
 		() => progress.value,
 		number => {
 			if (number === 100) {
+				general.isPreloaderVisible = false;
 				gsap.fromTo(
 					'.preloader',
 					{
@@ -57,7 +59,8 @@ import type { set } from 'nuxt/dist/app/compat/capi';
 					},
 					{
 						clipPath: 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
-						duration: 0.8,
+						duration: 1.2,
+						ease: 'power4.out',
 						onComplete: () => {
 							gsap.set('body', {
 								overflow: 'auto',
@@ -78,8 +81,8 @@ import type { set } from 'nuxt/dist/app/compat/capi';
 		background: #000;
 		color: #fff;
 
-		font-size: 8vw;
-		letter-spacing: -0.1em;
+		font-size: 6vw;
+		// letter-spacing: -0.1em;
 
 		display: flex;
 		justify-content: center;

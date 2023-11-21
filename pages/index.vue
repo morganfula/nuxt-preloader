@@ -9,6 +9,26 @@
 </template>
 
 <script setup>
+	import gsap from 'gsap';
+	import { general } from '@/store/index.js';
+
+	watch(
+		() => general.isPreloaderVisible,
+		value => {
+			if (!value) {
+				gsap.from('.gallery__item', {
+					// scale: 1.05,
+					y: 200,
+					opacity: 0.2,
+					duration: 0.8,
+					delay: 0.1,
+					stagger: 0.02,
+					ease: 'power4.out',
+				});
+			}
+		}
+	);
+
 	const images = [
 		'1.jpg',
 		'2.jpg',
@@ -30,6 +50,7 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 24px;
+		margin: 24px;
 	}
 	.gallery__item {
 		height: 20vw;
