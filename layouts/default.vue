@@ -10,11 +10,11 @@
 <style lang="scss">
 	/* Webfont: Dirtyline36Daysoftype2022-Reg */
 	@font-face {
-		font-family: 'Dirtyline';
+		font-family: 'Chillax-Medium';
 
-		src: url('Dirtyline.woff') format('woff'),
-			url('Dirtyline.woff2') format('woff2'),
-			url('Dirtyline.ttf') format('truetype'); /* Safari, Android, iOS */
+		src: url('/Chillax-Medium.woff') format('woff'),
+			url('/Chillax-Medium.woff2') format('woff2'),
+			url('/Chillax-Medium.ttf') format('truetype'); /* Safari, Android, iOS */
 		font-style: normal;
 		font-weight: normal;
 		text-rendering: optimizeLegibility;
@@ -42,12 +42,12 @@
 	}
 
 	body {
-		background-color: rgb(58, 58, 58);
+		background-color: #f6f3d6;
 		overflow: hidden;
 		-webkit-font-smoothing: antialiased;
 		-mos-osx-font-smoothing: grayscale;
 		color: white;
 
-		font-family: 'Dirtyline';
+		font-family: 'Chillax-Medium';
 	}
 </style>

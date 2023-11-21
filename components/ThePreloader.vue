@@ -1,7 +1,7 @@
 import type { set } from 'nuxt/dist/app/compat/capi';
 <template>
 	<div class="preloader">
-		<div class="preloader__percent">{{ progress ? progress : 0 }}%</div>
+		<div class="preloader__percent">{{ progress ? progress : 0 }}</div>
 	</div>
 </template>
 
@@ -81,7 +81,7 @@ import type { set } from 'nuxt/dist/app/compat/capi';
 		background: #000;
 		color: #fff;
 
-		font-size: 6vw;
+		font-size: 15vw;
 		// letter-spacing: -0.1em;
 
 		display: flex;
